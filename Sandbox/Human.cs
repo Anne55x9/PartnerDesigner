@@ -7,58 +7,63 @@ namespace Sandbox
 {
     class Human
     {
-        private bool maleOrFemale;
-        private String eyeColor;
-        private String hairColor;
-        private int heightCategory;
+        maleOrFemale Gender { get; set;}
+        eyeColor Eyes { get; set; }
+        haircolor Hair { get; set; }
+        heightCategory Height { get; set; }
 
-        public Human(bool maleOrFemale, String eyeColor, String hairColor, int heightCategory)
+        public enum maleOrFemale {male,female}
+        public enum eyeColor {blue, green, brown, satanic}
+        public enum haircolor {blonde, brown, black, red}
+        public enum heightCategory {VeryShort, Short, MediumHeight, Tall, VeryTall}
+
+        public Human(maleOrFemale Gender,  eyeColor Eyes, haircolor Hair, heightCategory Height)
         {
-            this.maleOrFemale = maleOrFemale;
-            this.eyeColor = eyeColor;
-            this.hairColor = hairColor;
-            this.heightCategory = heightCategory;
+            this.Gender = Gender;
+            this.Eyes = Eyes;
+            this.Hair = Hair;
+            this.Height = Height;
         }
 
         public String GetDescription()
         {
-            String description = "You got a " + GetGenderDescription();
-            description = description + ", with " + eyeColor + " eyes";
-            description = description + ", " + hairColor + " hair";
-            description = description + ", who is " + GetHeightDescription();
+            String description = "You got a " + Gender;
+            description = description + ", with " + Eyes + " eyes";
+            description = description + ", " + Hair + " hair";
+            description = description + ", who is " + Height;
 
             return description;
         }
 
-        public String GetGenderDescription()
-        {
-            if (maleOrFemale)
-            {
-                return "man";
-            }
-            else
-            {
-                return "woman";
-            }
-        }
+        //public String GetGenderDescription()
+        //{
+        //    if (maleOrFemale)
+        //    {
+        //        return "man";
+        //    }
+        //    else
+        //    {
+        //        return "woman";
+        //    }
+        //}
 
-        public String GetHeightDescription()
-        {
-            switch (heightCategory)
-            {
-                case 0:
-                    return "Very short";
-                case 1:
-                    return "Short";
-                case 2:
-                    return "Medium height";
-                case 3:
-                    return "Tall";
-                case 4:
-                    return "Very tall";
-                default:
-                    return "Unknown height";
-            }
-        }
+        //public 
+        //{
+        //    switch (heightCategory)
+        //    {
+        //        case VeryShort:
+        //            return "Very short";
+        //        case Short:
+        //            return "Short";
+        //        case MediumHeight:
+        //            return "Medium height";
+        //        case Tall:
+        //            return "Tall";
+        //        case VeryTall:
+        //            return "Very tall";
+        //        default:
+        //            return "Unknown height";
+        //    }
+        //}
     }
 }
